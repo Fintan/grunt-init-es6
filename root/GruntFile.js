@@ -2,18 +2,18 @@ module.exports = function(grunt) {
  require("load-grunt-tasks")(grunt);
 
  grunt.initConfig({
-	  "babel": {
-			options: {
-				stage: 1,
-				// optional: 'es7.decorators',
-				// sourceMap: true,
-				modules: 'amd'
-			},
-	    dist: {
-				files: [
+    "babel": {
+      options: {
+        stage: 1,
+        // optional: 'es7.decorators',
+        // sourceMap: true,
+        modules: 'amd'
+      },
+      dist: {
+        files: [
           { expand: true, cwd: 'src/', src: ['**/*.js'], dest: 'public/js', ext: '.js'}
-	      ]
-			}
+        ]
+      }
      },
      clean: ['./public/*'],
      copy: {
@@ -28,17 +28,17 @@ module.exports = function(grunt) {
     },
     requirejs: {
       compile: {
-		    options: {
-		      baseUrl: "./public/js",
-		      mainConfigFile: "./public/js/requireConfig.js",
-		      name: "index",
-		      out: "./public/js/index.js"
-		    }
-		  }
+        options: {
+          baseUrl: "./public/js",
+          mainConfigFile: "./public/js/requireConfig.js",
+          name: "index",
+          out: "./public/js/index.js"
+        }
+      }
     }
  });
 
  grunt.registerTask("default", ['clean', 'copy', 'babel:dist']);
  grunt.registerTask("production", ['clean', 'copy', 'babel:dist', 'requirejs:compile']);
-													 
+                           
 };
