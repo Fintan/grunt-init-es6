@@ -30,7 +30,7 @@ exports.template = function(grunt, init, done) {
   init.process({type: 'haxe'}, [
       
     // Prompt for these values.
-      init.prompt('name', 'Choose a project name'),
+      init.prompt('name', 'Choose a project name (no spaces)'),
       init.prompt('title', 'A Javascript ES6 Project.'),
       init.prompt('version'),
       init.prompt('repository'),

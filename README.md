@@ -1,4 +1,4 @@
-# grunt-init-requirejs_backbone
+# grunt-init-es6
 
 > Create a Javascript (ES6) project scaffolding with [grunt-init][].
 
